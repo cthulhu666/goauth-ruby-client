@@ -5,5 +5,4 @@ require 'goauth/client'
 
 module Goauth
   AuthError = Class.new(RuntimeError)
-
 end

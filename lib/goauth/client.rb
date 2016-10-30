@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'faraday'
 require 'json'
 
@@ -35,10 +36,10 @@ module Goauth
         req.headers['app-key'] = api_key
       end
       case response.status
-        when 200..299
-          JSON.parse(response.body, symbolize_names: true)
-        else
-          fail AuthError, JSON.parse(response.body, symbolize_names: true)
+      when 200..299
+        JSON.parse(response.body, symbolize_names: true)
+      else
+        raise AuthError, JSON.parse(response.body, symbolize_names: true)
       end
     end
 
@@ -49,10 +50,10 @@ module Goauth
         req.body = account.to_json
       end
       case response.status
-        when 200..299
-          JSON.parse(response.body, symbolize_names: true)
-        else
-          fail AuthError, JSON.parse(response.body, symbolize_names: true)
+      when 200..299
+        JSON.parse(response.body, symbolize_names: true)
+      else
+        raise AuthError, JSON.parse(response.body, symbolize_names: true)
       end
     end
 

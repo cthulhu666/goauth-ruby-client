@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://auth.go.intami.pl/accounts
+    body:
+      encoding: UTF-8
+      string: '{"firstName":"foo","lastName":"bar","emails":[{"email":"foo@bar.baz"}]}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      App-Key:
+      - some.fake.key
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Sun, 30 Oct 2016 21:01:17 GMT
+      Server:
+      - Server:GoAuth
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"id":"2fdcbef6-e452-42ad-b254-f46fa28f14b4","emails":[{"email":"foo@bar.baz","primary":false}],"status":"CONFIRMED","firstName":"foo","lastName":"bar"}'
+    http_version: 
+  recorded_at: Sun, 30 Oct 2016 21:01:17 GMT
+recorded_with: VCR 3.0.3

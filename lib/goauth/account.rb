@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'hashie'
 
 module Goauth
@@ -9,6 +10,5 @@ module Goauth
     property :first_name, from: :firstName
     property :last_name, from: :lastName
     property :emails
-
   end
 end
