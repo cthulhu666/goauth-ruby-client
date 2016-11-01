@@ -39,7 +39,7 @@ module Goauth
       when 200..299
         JSON.parse(response.body, symbolize_names: true)
       else
-        raise AuthError, JSON.parse(response.body, symbolize_names: true)
+        fail AuthError, JSON.parse(response.body, symbolize_names: true)
       end
     end
 
@@ -53,7 +53,7 @@ module Goauth
       when 200..299
         JSON.parse(response.body, symbolize_names: true)
       else
-        raise AuthError, JSON.parse(response.body, symbolize_names: true)
+        fail AuthError, JSON.parse(response.body, symbolize_names: true)
       end
     end
 
