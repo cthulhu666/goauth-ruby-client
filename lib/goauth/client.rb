@@ -19,8 +19,8 @@ module Goauth
       Account.new(hash)
     end
 
-    def accounts
-      get('/accounts', @api_key)
+    def accounts(page: 1)
+      get('/accounts', @api_key, page: page)
     end
 
     def find_account(id)
@@ -30,8 +30,8 @@ module Goauth
 
     private
 
-    def get(url, api_key)
-      response = conn.get url do |req|
+    def get(url, api_key, params = {})
+      response = conn.get url, params do |req|
         req.headers['Content-Type'] = 'application/json'
         req.headers['app-key'] = api_key
       end
