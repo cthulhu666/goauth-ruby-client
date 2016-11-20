@@ -23,7 +23,7 @@ http_interactions:
       message: Created
     headers:
       Date:
-      - Sun, 30 Oct 2016 21:01:17 GMT
+      - Sun, 20 Nov 2016 17:44:52 GMT
       Server:
       - Server:GoAuth
       Content-Type:
@@ -32,7 +32,7 @@ http_interactions:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"id":"2fdcbef6-e452-42ad-b254-f46fa28f14b4","emails":[{"email":"foo@bar.baz","primary":false}],"status":"CONFIRMED","firstName":"foo","lastName":"bar"}'
+      string: '{"id":"488d4dd0-929a-4456-acdb-89054377d167","emails":[{"email":"foo@bar.baz","primary":false}],"status":"CONFIRMED","skipWelcomeEmail":false,"firstName":"foo","lastName":"bar"}'
     http_version: 
-  recorded_at: Sun, 30 Oct 2016 21:01:17 GMT
+  recorded_at: Sun, 20 Nov 2016 17:44:52 GMT
 recorded_with: VCR 3.0.3
