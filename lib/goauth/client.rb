@@ -19,6 +19,10 @@ module Goauth
       Account.new(hash)
     end
 
+    def delete_account(id)
+      delete("/accounts/#{id}", @api_key)
+    end
+
     def accounts(page: 1)
       get('/accounts', @api_key, page: page)
     end
@@ -48,6 +52,19 @@ module Goauth
         req.headers['Content-Type'] = 'application/json'
         req.headers['app-key'] = api_key
         req.body = account.to_json
+      end
+      case response.status
+      when 200..299
+        JSON.parse(response.body, symbolize_names: true)
+      else
+        fail AuthError, JSON.parse(response.body, symbolize_names: true)
+      end
+    end
+
+    def delete(url, api_key)
+      response = conn.delete url do |req|
+        req.headers['Content-Type'] = 'application/json'
+        req.headers['app-key'] = api_key
       end
       case response.status
       when 200..299
