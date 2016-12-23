@@ -24,7 +24,8 @@ module Goauth
     end
 
     def accounts(page: 1)
-      get('/accounts', @api_key, page: page)
+      rs = get('/accounts', @api_key, page: page)
+      ResultList.new(rs, Account)
     end
 
     def find_account(id)

@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://auth.go.intami.pl/accounts?page=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      App-Key:
+      - some.fake.key
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 23 Dec 2016 17:41:54 GMT
+      Server:
+      - Server:GoAuth
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpdGVtcyI6W3siaWQiOiJlNzRjZWY4Mi0xNTUwLTRlNWQtODAwNS0zNmRh
+        YzIyMWM1MzEiLCJlbWFpbHMiOlt7ImVtYWlsIjoibmFvbWllLnJlaWxseUBo
+        YWNrZXR0Lm5ldCIsInByaW1hcnkiOnRydWV9XSwic3RhdHVzIjoiQ09ORklS
+        TUVEIiwiZmlyc3ROYW1lIjoiSmFuIiwibGFzdE5hbWUiOiJOb3dhayJ9LHsi
+        aWQiOiI3YTljMzc5YS03MzMxLTQ0MmQtYjUyNC01NWI2MTZkOTllOGEiLCJl
+        bWFpbHMiOlt7ImVtYWlsIjoibG9ubmllQHBhZGJlcmdydW50ZS5pbyIsInBy
+        aW1hcnkiOnRydWV9XSwic3RhdHVzIjoiQ09ORklSTUVEIiwiZmlyc3ROYW1l
+        IjoiSmFuIiwibGFzdE5hbWUiOiJOb3dhayJ9LHsiaWQiOiIyZjI4YzhkOC00
+        NjU0LTQ2OTItYTQ0ZS02MDIyNGUzZDI4MTkiLCJlbWFpbHMiOlt7ImVtYWls
+        IjoiY2FteWxsZS5wb2xsaWNoQHBvbGxpY2guaW8iLCJwcmltYXJ5Ijp0cnVl
+        fV0sInN0YXR1cyI6IkNPTkZJUk1FRCIsImZpcnN0TmFtZSI6IkphbiIsImxh
+        c3ROYW1lIjoiTm93YWsifSx7ImlkIjoiMDZmODFhMDEtMjQ3YS00NjdkLWFi
+        MjAtZmZhN2I1NzcxZDJlIiwiZW1haWxzIjpbeyJlbWFpbCI6ImVyaWMubml0
+        enNjaGVAZ2xvdmVybmllbm93Lm5ldCIsInByaW1hcnkiOnRydWV9XSwic3Rh
+        dHVzIjoiQ09ORklSTUVEIiwiZmlyc3ROYW1lIjoiSmFuIiwibGFzdE5hbWUi
+        OiJOb3dhayJ9LHsiaWQiOiJkY2M3YmJmZi04MTlhLTQ2ZGQtOWE2ZS0wMjkz
+        NzMyMmE0MjQiLCJlbWFpbHMiOlt7ImVtYWlsIjoibWFyam9sYWluZUBsZXNj
+        aC5vcmciLCJwcmltYXJ5Ijp0cnVlfV0sInN0YXR1cyI6IkNPTkZJUk1FRCIs
+        ImZpcnN0TmFtZSI6IkphbiIsImxhc3ROYW1lIjoiTm93YWsifSx7ImlkIjoi
+        NTk1ODFhYzEtOWRhYi00YjQwLWE5YzEtYmJlOTkxOTRhMmY5IiwiZW1haWxz
+        IjpbeyJlbWFpbCI6ImJhcnRlay5za3VyY3p5bnNraUBnbWFpbC5jb20iLCJw
+        cmltYXJ5Ijp0cnVlfV0sInN0YXR1cyI6IkNPTkZJUk1FRCIsImZpcnN0TmFt
+        ZSI6IkJhcnRlayIsImxhc3ROYW1lIjoiU2vDs3JhIn0seyJpZCI6IjQ4OGQ0
+        ZGQwLTkyOWEtNDQ1Ni1hY2RiLTg5MDU0Mzc3ZDE2NyIsImVtYWlscyI6W3si
+        ZW1haWwiOiJmb29AYmFyLmJheiIsInByaW1hcnkiOmZhbHNlfV0sInN0YXR1
+        cyI6IkNPTkZJUk1FRCIsImZpcnN0TmFtZSI6ImZvbyIsImxhc3ROYW1lIjoi
+        YmFyIn0seyJpZCI6IjJlZjVhYWNhLTFiZTAtNDBhMy1iMTE4LTJlMTFmMzA4
+        MzE3ZCIsImVtYWlscyI6W3siZW1haWwiOiJkdWl1dWVpeEBzaGFya2xhc2Vy
+        cy5jb20iLCJwcmltYXJ5Ijp0cnVlfV0sInN0YXR1cyI6IkNPTkZJUk1FRCIs
+        ImZpcnN0TmFtZSI6Ikpha3ViIiwibGFzdE5hbWUiOiJHxYJ1c3plY2tpIn0s
+        eyJpZCI6ImIwM2Y3NWZmLTQ0M2QtNGVhZC05NGUzLTc2MmM5YjE1MmFmZCIs
+        ImVtYWlscyI6W3siZW1haWwiOiJtZWdoYW5fc2NobWlkdEBhdWVyLmluZm8i
+        LCJwcmltYXJ5Ijp0cnVlfV0sInN0YXR1cyI6IkNPTkZJUk1FRCIsImZpcnN0
+        TmFtZSI6IkphbiIsImxhc3ROYW1lIjoiTm93YWsifSx7ImlkIjoiMmE5ZTY5
+        YTItYzYzNS00NmE1LTk4MjQtOTEzZjgwNDliMDdjIiwiZW1haWxzIjpbeyJl
+        bWFpbCI6ImhhcmR5Lmd1dGtvd3NraUByaWNlLm5hbWUiLCJwcmltYXJ5Ijp0
+        cnVlfV0sInN0YXR1cyI6IkNPTkZJUk1FRCIsImZpcnN0TmFtZSI6IkphbiIs
+        Imxhc3ROYW1lIjoiTm93YWsifV0sInBhZ2luZyI6eyJ0b3RhbCI6OTIsInBh
+        Z2UiOjIsImNvdW50IjoxMH19
+    http_version: 
+  recorded_at: Fri, 23 Dec 2016 17:41:54 GMT
+recorded_with: VCR 3.0.3
