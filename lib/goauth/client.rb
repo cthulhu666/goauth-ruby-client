@@ -32,6 +32,14 @@ module Goauth
       Account.new(hash)
     end
 
+    def generate_password_recovery_token(account_id)
+      payload = {
+        'accountId' => account_id,
+        'validTime' => nil
+      }
+      post('/custom-password-recovery-token', payload, @api_key)
+    end
+
     private
 
     def get(url, api_key, params = {})
