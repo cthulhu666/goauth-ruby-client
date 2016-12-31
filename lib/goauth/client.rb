@@ -41,6 +41,26 @@ module Goauth
       post('/custom-password-recovery-token', payload, @api_key)
     end
 
+    def password_check(account_id, password)
+      payload = {
+        'accountId' => account_id,
+        'password' => password
+      }
+      rs = post('/password-check', payload, @api_key)
+      rs[:correct]
+    end
+
+    # changes password _after_ obtaining a token
+    def change_password(token, password)
+      payload = {
+        'token' => token,
+        'newPassword' => password,
+        'newPasswordRetype' => password, # TODO: I hope this will go away
+        'loginAfter' => false # no idea what it does
+      }
+      post('/password-recovery-set', payload, @api_key)
+    end
+
     private
 
     def get(url, api_key, params = {})
