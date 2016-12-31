@@ -23,6 +23,10 @@ module Goauth
       delete("/accounts/#{id}", @api_key)
     end
 
+    def update_account(id, account)
+      put("/accounts/#{id}", account, @api_key)
+    end
+
     def accounts(page: 1)
       rs = get('/accounts', @api_key, page: page)
       ResultList.new(rs, Account)
@@ -56,7 +60,7 @@ module Goauth
         'token' => token,
         'newPassword' => password,
         'newPasswordRetype' => password, # TODO: I hope this will go away
-        'loginAfter' => false # no idea what it does
+        'loginAfter' => false
       }
       post('/password-recovery-set', payload, @api_key)
     end
@@ -77,7 +81,15 @@ module Goauth
     end
 
     def post(url, account, api_key)
-      response = conn.post url do |req|
+      request_with_body(url, account, api_key, method: :post)
+    end
+
+    def put(url, account, api_key)
+      request_with_body(url, account, api_key, method: :put)
+    end
+
+    def request_with_body(url, account, api_key, method:)
+      response = conn.public_send(method, url) do |req|
         req.headers['Content-Type'] = 'application/json'
         req.headers['app-key'] = api_key
         req.body = account.to_json
