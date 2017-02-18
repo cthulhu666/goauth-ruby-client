@@ -9,6 +9,10 @@ module Goauth
       @api_key = api_key
     end
 
+    def authenticate!(credentials)
+      post('/auth', { email: credentials[:email], password: credentials[:password] }, @api_key)
+    end
+
     def create_account(account)
       hash = post('/accounts', account, @api_key)
       Account.new(hash)
