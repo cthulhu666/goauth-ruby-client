@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://auth.go.intami.pl/accounts
+    uri: https://goauth.intami.pl/accounts
     body:
       encoding: UTF-8
       string: '{"firstName":"foo","lastName":"bar","emails":[{"email":"foo@bar.baz"}]}'

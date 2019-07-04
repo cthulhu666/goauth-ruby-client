@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://auth.go.intami.pl/accounts?page=1
+    uri: https://goauth.intami.pl/accounts?page=1
     body:
       encoding: US-ASCII
       string: ''

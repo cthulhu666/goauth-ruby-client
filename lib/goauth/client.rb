@@ -1,6 +1,9 @@
 # frozen_string_literal: true
+
 require 'faraday'
 require 'json'
+
+require_relative 'batch'
 
 module Goauth
   class Client
@@ -67,6 +70,25 @@ module Goauth
         'loginAfter' => false
       }
       post('/password-recovery-set', payload, @api_key)
+    end
+
+    def batch(&block)
+      b = BatchOperations.new
+      block.yield(b)
+      payload = b.ops.map do |e|
+        { method: e[0],
+          url: e[1],
+          body: e[2] }
+      end
+      rs = post('/batch-update', payload, @api_key)
+      rs.zip(b.ops).map do |response, op|
+        case response[:status]
+        when 'SUCCESS'
+          op[3].call(JSON.parse(response[:body], symbolize_names: true))
+        else
+          AuthError.new
+        end
+      end
     end
 
     private

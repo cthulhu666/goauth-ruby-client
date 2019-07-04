@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://goauth.intami.pl/batch-update
+    body:
+      encoding: UTF-8
+      string: '[{"method":"POST","url":"/accounts","body":{"firstName":"foo1","lastName":"bar1","emails":[{"email":"xfoo1@bar.baz"}]}},{"method":"POST","url":"/accounts","body":{"firstName":"foo2","lastName":"bar2","emails":[{"email":"xfoo2@bar.baz"}]}}]'
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Content-Type:
+      - application/json
+      App-Key:
+      - eyJhbGciOiJIUzI1NiJ9.eyJhcHAiOiI3OTFiYjNiYy1iNTY1LTQxNDgtYjJhNC02MmY2MzU2ZmQ5YTgiLCJ0eXAiOiJBUFBfS0VZIiwiaWF0IjoxNDc3NDIwNzQ5LCJpc3MiOiJHb0F1dGgifQ.CxEMRe3dge3mYN8WLyPJPNqc3tDdK7Ci0dMnsVJD8NU
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Fri, 05 Jul 2019 11:48:26 GMT
+      Server:
+      - Server:GoAuth
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[{"status":"SUCCESS","httpCode":201,"body":"{\"id\":\"a02f2532-e7fd-406d-b6a3-9594462ff674\",\"emails\":[{\"email\":\"xfoo1@bar.baz\",\"primary\":false}],\"status\":\"CONFIRMED\",\"skipWelcomeEmail\":false,\"firstName\":\"foo1\",\"lastName\":\"bar1\"}"},{"status":"SUCCESS","httpCode":201,"body":"{\"id\":\"3636e7e8-90d4-4b5f-b8b2-c28497bb010d\",\"emails\":[{\"email\":\"xfoo2@bar.baz\",\"primary\":false}],\"status\":\"CONFIRMED\",\"skipWelcomeEmail\":false,\"firstName\":\"foo2\",\"lastName\":\"bar2\"}"}]'
+    http_version: 
+  recorded_at: Fri, 05 Jul 2019 11:48:26 GMT
+recorded_with: VCR 5.0.0
